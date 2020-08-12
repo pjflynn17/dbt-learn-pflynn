@@ -1,6 +1,15 @@
 version: 2
+
 models:
+  - name: orders
+    description: '{{ doc("table_orders") }}'
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
   - name: customers
+    description: This table contains all unique customers
     columns:
       - name: customer_id
         tests:
@@ -9,6 +18,7 @@ models:
   - name: stg_customers
     columns:
       - name: customer_id
+        description: Unique Customer ID
         tests:
           - unique
           - not_null

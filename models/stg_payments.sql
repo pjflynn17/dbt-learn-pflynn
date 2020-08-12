@@ -6,5 +6,3 @@ from
     raw.stripe.payment
 where
     status = 'success'
-group by
-    orderid

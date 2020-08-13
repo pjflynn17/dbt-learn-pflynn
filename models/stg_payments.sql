@@ -3,6 +3,6 @@ select
     status,
     amount
 from
-    raw.stripe.payment
+    {{ source('stripe', 'payment')}}
 where
     status = 'success'

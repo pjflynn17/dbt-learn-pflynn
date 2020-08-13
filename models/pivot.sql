@@ -1,0 +1,1 @@
+select * from {{ ref('stg_payments')}} pivot(sum(amount) for payment_method in('credit_card', 'bank_transfer', 'coupon', 'gift_card')) as p order by 1
